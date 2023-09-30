@@ -1,0 +1,7 @@
+{
+  "name": "TestAssessmentOrigamiCode",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
