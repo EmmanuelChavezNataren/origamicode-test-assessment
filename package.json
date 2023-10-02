@@ -1,15 +1,21 @@
 {
-  "name": "TestAssessmentOrigamiCode",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "name": "test-assessment-origami-code",
+  "version": "1.0.0",
+  "author": "Emmanuel Chavez",
+  "homepage": "https://github.com/EmmanuelChavezNataren",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "sync": "ionic build --configuration=staging && npx cap sync",
+    "serve:staging": "ionic serve --configuration staging",
+    "serve:prod": "ionic serve --configuration production",
+    "debug:apk": "ionic capacitor run android --configuration staging -l --external",
+    "debug:ios": "ionic capacitor run ios --configuration staging -l --external",
+    "check": "ng lint && ng test --watch=false"
   },
   "private": true,
   "dependencies": {
@@ -63,5 +69,5 @@
     "ts-node": "^8.3.0",
     "typescript": "~5.0.2"
   },
-  "description": "An Ionic project"
+  "description": "Test Assessment for Origami Code Consulting in vacancy of Front End"
 }
