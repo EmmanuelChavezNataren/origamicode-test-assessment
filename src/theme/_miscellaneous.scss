@@ -1,0 +1,23 @@
+.bg-transparent {
+  background: transparent;
+}
+
+.mx-16 {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.mt-24 {
+  margin-top: 24px;
+}
+
+/** Flex **/
+.align {
+  &-self {
+    &-flex {
+      &-end {
+        align-self: flex-end;
+      }
+    }
+  }
+}
