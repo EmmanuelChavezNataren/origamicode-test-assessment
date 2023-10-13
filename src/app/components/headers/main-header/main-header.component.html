@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf="!hasLogoTitle">{{ title }}</ion-title>
+    <ion-title hasLogoTitle *ngIf="hasLogoTitle" class="text-title-brand">
+      <span class="primary">BEAUTY </span> <span class="secondary">HAIR</span>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button autoHide="false" color="primary"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

@@ -1,0 +1,6 @@
+ion-list{
+  &[form-custom]{
+    display: flex;
+    flex-direction: column;
+  }
+}
