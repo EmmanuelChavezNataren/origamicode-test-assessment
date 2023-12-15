@@ -1,0 +1,20 @@
+<ion-menu contentId="main-menu" side="end" type="overlay">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        <p class="text-title-primary">BEAUTY</p>
+        <p class="text-title-secondary">HAIR</p>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-menu-toggle auto-hide="false" *ngFor="let pages of appPages; let i = index">
+        <ion-item routerDirection="forward" [routerLink]="[pages.url]" lines="none" detail="false">
+          <ion-icon slot="start" [name]="pages.icon"></ion-icon>
+          <ion-label>{{ pages.title }}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu>
