@@ -1,15 +1,16 @@
 ion-item {
   &[input] {
     &[custom] {
+      --background-hover-opacity: 0;
       --background: transparent;
       --border-width: 0;
+      --color: var(--ion-color-label-text);
       --inner-padding-end: 0;
       --min-height: auto;
       --padding-start: 0;
       margin-bottom: 10px;
       ion-label {
         &[position="stacked"] {
-          --color: var(--ion-color-label-text);
           font-family: "Montserrat";
           font-size: 16px;
           font-weight: 600;
@@ -21,15 +22,18 @@ ion-item {
           --background: rgba(var(--ion-color-secondary-rgb), 0.06);
           --border-radius: 4px;
           --border-width: none;
-          --color: var(--ion-color-primary-shade);
+          --color: var(--ion-color-tertiary);
+          --highlight-color-valid: var(--ion-color-label-text);
           --padding-bottom: 12px;
           --padding-end: 12px;
           --padding-start: 12px;
           --padding-top: 12px;
+          --placeholder-color: var(--ion-color-primary-shade);
           font-family: "Montserrat";
           font-size: 14px;
           min-height: auto;
-          label, input {
+          label,
+          input {
             line-height: 30px;
           }
         }

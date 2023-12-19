@@ -21,9 +21,11 @@
     "strictPropertyInitialization": false,
     "lib": [
       "es2018",
-      "dom"
+      "dom",
+      "dom.Iterable"
     ],
-    "useDefineForClassFields": false
+    "resolveJsonModule": true,
+    //"useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

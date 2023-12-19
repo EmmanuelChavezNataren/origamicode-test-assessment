@@ -6,7 +6,7 @@ ion-button {
       --padding-end: 14px;
       --padding-start: 14px;
       --padding-top: 10px;
-      &::part("native") {
+      &::part(native) {
         font-weight: 700;
         line-height: 21px;
       }
