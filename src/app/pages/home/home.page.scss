@@ -1,0 +1,22 @@
+.main-bg {
+  align-items: center;
+  background: url("../../../assets/img/home-banner.png") lightgray 50% / cover
+    no-repeat;
+  display: flex;
+  height: auto;
+  justify-content: flex-end;
+  ion-list.quotes {
+    height: 100%;
+    justify-content: center;
+    margin: 10% 5.5% 8%;
+    max-height: 406px;
+    max-width: 414px;
+    width: 100%;
+  }
+}
+
+ion-grid {
+  &.container {
+    padding: 72px 40px;
+  }
+}
