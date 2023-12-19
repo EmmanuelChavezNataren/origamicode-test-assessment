@@ -16,8 +16,8 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2020",
-    "module": "commonjs",
+    "target": "es2022",
+    "module": "es2020",
     "strictPropertyInitialization": false,
     "lib": [
       "es2018",
