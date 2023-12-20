@@ -13,12 +13,11 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2022",
-    "module": "es2020",
+    "module": "commonjs",
     "strictPropertyInitialization": false,
     "lib": [
       "es2018",
       "dom",
-      "dom.Iterable"
     ],
     "useDefineForClassFields": false
   },

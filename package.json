@@ -41,6 +41,7 @@
     "@ngrx/store-devtools": "^17.0.1",
     "@swimlane/ngx-datatable": "^20.1.0",
     "date-fns": "^2.30.0",
+    "date-fns-tz": "^2.0.0",
     "ionicons": "^7.2.2",
     "rxjs": "^7.8.1",
     "tslib": "^2.6.2",
