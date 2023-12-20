@@ -6,3 +6,5 @@ export interface Appointment {
 }
 
 export type AppointmentData = Appointment[];
+
+export type SectionOps = 'all' | 'top5' | 'empty';
