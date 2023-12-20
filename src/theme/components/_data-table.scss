@@ -1,0 +1,156 @@
+$datatabe-color-rgb: var(--ion-color-tertiary-rgb);
+$datatable-border-color: var(--ion-color-light-shade);
+$datatable-color-contrast: var(--ion-color-tertiary-contrast);
+$datatable-color: var(--ion-color-tertiary);
+$datatable-font-family: "Inter";
+$datatable-font-size: 16px;
+$datatable-padding-md: 14px 16px;
+$datatable-striped-color: var(--ion-color-light-tint);
+
+@mixin datatable-text-overflow-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin datatable-transition {
+  transition-duration: 0.3s;
+  transition-property: background;
+  transition-timing-function: linear;
+}
+
+.ngx-datatable.material {
+  background: none;
+  box-shadow: none;
+  &.striped {
+    .datatable-row-odd {
+      background: $datatable-striped-color;
+    }
+  }
+  /** HEADER **/
+  .datatable-header {
+    border-color: $datatable-border-color;
+    border-style: solid none solid;
+    border-width: 1px 0 2px;
+    &-inner {
+      height: 100%;
+    }
+    .datatable-header-cell {
+      background: none;
+      color: $datatable-color;
+      font-family: $datatable-font-family;
+      font-size: $datatable-font-size;
+      font-weight: 800;
+      padding: $datatable-padding-md;
+      .datatable-header-cell-template-wrap {
+        @include datatable-text-overflow-ellipsis();
+      }
+    }
+  }
+  /** BODY **/
+  .datatable-body {
+    .datatable-body-row {
+      border-bottom: 1px solid $datatable-border-color;
+      vertical-align: top;
+      &.active,
+      &.active .datatable-row-group {
+        background: $datatable-color;
+        .datatable-body-cell {
+          color: $datatable-color-contrast;
+        }
+      }
+
+      &.active:hover,
+      &.active:hover .datatable-row-group {
+        background: $datatable-color;
+        .datatable-body-cell {
+          color: $datatable-color-contrast;
+        }
+      }
+      .datatable-body-cell {
+        color: $datatable-color;
+        font-family: $datatable-font-family;
+        font-size: $datatable-font-size;
+        line-height: 28px;
+        padding: $datatable-padding-md;
+        .datatable-body-cell-label {
+          @include datatable-text-overflow-ellipsis();
+        }
+        &:first-of-type {
+          font-weight: 800;
+        }
+      }
+    }
+  }
+  /** FOOTER **/
+  .datatable-footer {
+    background: rgba(var(--ion-color-primary-rgb), 40%);
+    border-top: 2px solid rgba($datatable-border-color, 0.42);
+    color: rgba($datatabe-color-rgb, 64%);
+    .datatable-pager {
+      a {
+        color: rgba($datatabe-color-rgb, 64%);
+      }
+      li.disabled a {
+        color: rgba($datatabe-color-rgb, 36%) !important;
+      }
+    }
+  }
+
+  &:not(.cell-selection) {
+    .datatable-body-row {
+      &:hover,
+      &:hover .datatable-row-group {
+        @include datatable-transition();
+        background-color: rgba($datatabe-color-rgb, 20%);
+        .datatable-body-cell {
+          color: $datatable-color-contrast;
+        }
+      }
+
+      &:focus,
+      &:focus .datatable-row-group {
+        background-color: rgba($datatabe-color-rgb, 25%);
+        .datatable-body-cell {
+          color: $datatable-color-contrast;
+        }
+      }
+    }
+  }
+  &.cell-selection {
+    .datatable-body-cell {
+      &:hover,
+      &:hover .datatable-row-group {
+        @include datatable-transition();
+        background-color: rgba($datatabe-color-rgb, 100%);
+        .datatable-body-cell {
+          color: $datatable-color-contrast;
+        }
+      }
+
+      &:focus,
+      &:focus .datatable-row-group {
+        background-color: rgba($datatabe-color-rgb, 100%);
+        .datatable-body-cell {
+          color: $datatable-color-contrast;
+        }
+      }
+
+      &.active,
+      &.active .datatable-row-group {
+        background: $datatable-color;
+        .datatable-body-cell {
+          color: $datatable-color-contrast;
+        }
+      }
+
+      &.active:hover,
+      &.active:hover .datatable-row-group {
+        background: $datatable-color;
+        .datatable-body-cell {
+          color: $datatable-color-contrast;
+        }
+      }
+    }
+  }
+}
