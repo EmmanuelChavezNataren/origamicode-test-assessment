@@ -7,3 +7,15 @@ ion-popover {
     --width: fit-content;
   }
 }
+
+ion-grid {
+  &.grid-no-padding {
+    padding: 0;
+    ion-row {
+      padding: 0;
+      ion-col {
+        padding: 0;
+      }
+    }
+  }
+}

@@ -48,13 +48,36 @@
   <ng-container>
     <ion-grid class="container">
       <ion-row>
-        <ion-col size="6">
-          <ion-label>
-            <p>Pizza</p>
-            <h2>Hawaii</h2>
-          </ion-label>
+        <ion-col size="12">
+          <ion-segment mode="md" [value]="sectionSelected" (ionChange)="segmentChanged($event)">
+            <ion-segment-button mode="md" *ngFor="let section of sectionList" [value]="section.value"
+              [disabled]="!section.isActive">
+              <ion-label>{{ section.name }}</ion-label>
+            </ion-segment-button>
+          </ion-segment>
         </ion-col>
-        <ion-col size="6"></ion-col>
+      </ion-row>
+      <ion-row [ngSwitch]="sectionSelected" class="datatable-container">
+        <ion-col size="12" *ngSwitchCase="'all'">
+          <ion-list custom-list>
+            <ion-list-header>
+              Todas Mis Citas
+            </ion-list-header>
+            <app-data-table [data]="appointmentData" [columns]="columns" [sorts]="sortsById"></app-data-table>
+          </ion-list>
+        </ion-col>
+        <ion-col size="12" *ngSwitchCase="'top5'">
+          <ion-list custom-list>
+            <ion-list-header>
+              Próximas 5 Citas
+            </ion-list-header>
+            <app-data-table [data]="appointmentData" [columns]="columns" [sorts]="sortsByDate"
+              [limit]="5"></app-data-table>
+          </ion-list>
+        </ion-col>
+        <ion-col size="12" *ngSwitchCase="'empty'">
+          <!--TODO Make when Section 3 has a proposal of prototype-->
+        </ion-col>
       </ion-row>
     </ion-grid>
   </ng-container>

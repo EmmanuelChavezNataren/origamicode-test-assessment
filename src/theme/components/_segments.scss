@@ -1,0 +1,59 @@
+ion-segment {
+  align-items: flex-end;
+  display: inline-flex;
+  height: 100%;
+  justify-content: flex-start;
+  max-height: fit-content;
+  ion-segment-button {
+    --background-checked: var(--ion-color-primary);
+    --background-focused: var(--ion-color-primary-shade);
+    --background-hover: var(--ion-color-primary-shade);
+    --background: var(--ion-color-light);
+    --border-color: var(--ion-color-light-shade);
+    --border-radius: 4px 4px 0px 0px;
+    --color-checked: var(--ion-color-light);
+    --color-focused: var(--ion-color-light-shade);
+    --color-hover: var(--ion-color-light-shade);
+    --color: var(--ion-color-primary);
+    --indicator-height: none;
+    --padding-bottom: 8px;
+    --padding-end: 16px;
+    --padding-start: 16px;
+    --padding-top: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    max-height: fit-content;
+    max-width: fit-content;
+    min-height: auto;
+    &::part(native) {
+      box-shadow: 0px -1px 0px 0px var(--ion-color-light-shade) inset;
+      min-height: auto;
+    }
+
+    ion-label.md {
+      align-items: center;
+      display: flex;
+      gap: 4px;
+      justify-content: center;
+      line-height: 24px;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+  }
+}
+
+.segment-button-checked.md {
+  --border-style: solid;
+  --border-width: 1px;
+  &::part(native) {
+    box-shadow: 0px -1px 0px 0px var(--ion-color-light) inset;
+  }
+}
+.segment-button-disabled.md {
+  --color: var(--ion-color-medium);
+  font-weight: 400;
+  &::part(native) {
+    box-shadow: 0px -1px 0px 0px var(--ion-color-light-shade) inset;
+  }
+}

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { NavigationItems } from 'src/shared/enums/navigation.enum';
+import { NavigationItems } from 'src/app/shared/enums/navigation.enum';
 
 @Component({
   selector: 'app-side-menu',

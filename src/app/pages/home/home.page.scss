@@ -18,5 +18,28 @@
 ion-grid {
   &.container {
     padding: 72px 40px;
+    ion-row {
+      &.datatable-container {
+        border: 1px solid var(--ion-color-light-shade);
+        padding: 0 28px;
+      }
+      ion-col {
+        padding: 0;
+        ion-list {
+          &[custom-list] {
+            ion-list-header {
+              --color: var(--ion-color-primary);
+              display: grid;
+              font-size: 30px;
+              font-weight: 700;
+              justify-content: center;
+              line-height: 24px;
+              min-height: auto;
+              padding: 24px 0;
+            }
+          }
+        }
+      }
+    }
   }
 }
