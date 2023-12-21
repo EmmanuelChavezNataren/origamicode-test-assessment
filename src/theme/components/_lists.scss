@@ -1,0 +1,10 @@
+ion-list.md{
+  &[form-custom]{
+    display: flex;
+    flex-direction: column;
+  }
+  &[custom-list]{
+    padding-bottom: 24px;
+    padding-top: 24px;
+  }
+}

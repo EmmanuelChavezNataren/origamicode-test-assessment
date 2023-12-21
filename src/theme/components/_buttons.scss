@@ -1,0 +1,15 @@
+ion-button {
+  &[expand="block"] {
+    &[shape="round"] {
+      --border-radius: 100px;
+      --padding-bottom: 10px;
+      --padding-end: 14px;
+      --padding-start: 14px;
+      --padding-top: 10px;
+      &::part(native) {
+        font-weight: 700;
+        line-height: 21px;
+      }
+    }
+  }
+}

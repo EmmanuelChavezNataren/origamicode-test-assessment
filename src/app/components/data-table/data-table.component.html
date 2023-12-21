@@ -1,0 +1,18 @@
+<ion-grid fixed class="grid-no-padding">
+  <ion-row>
+    <ion-col size="12">
+      <ngx-datatable class="material striped" [limit]="page.size" [rows]="rows" [rowHeight]="52" [columns]="columns"
+        [columnMode]="'flex'" [headerHeight]="56" [footerHeight]="!limit ? 50 : 0" [loadingIndicator]="loadingIndicator"
+        [offset]="page.pageNumber" (page)="onPageChange($event.offset)" [count]="page.totalElements"
+        [externalPaging]="true" [sorts]="sorts">
+
+        <ngx-datatable-column *ngFor="let col of columns" [name]="col.name" [prop]="col.prop" [resizeable]="false"
+          [flexGrow]="col.flexGrow" [sortable]="true">
+          <ng-template ngx-datatable-cell-template let-value="value">
+            {{ col.displayFormat ? handleFormatDate(value, col.displayFormat) : value }}
+          </ng-template>
+        </ngx-datatable-column>
+      </ngx-datatable>
+    </ion-col>
+  </ion-row>
+</ion-grid>

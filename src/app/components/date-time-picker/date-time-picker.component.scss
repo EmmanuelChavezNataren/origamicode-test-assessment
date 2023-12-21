@@ -1,0 +1,45 @@
+ion-datetime.md {
+  --background: var(--ion-color-light);
+  --ion-color-base: transparent !important;
+  --ion-color-step-500: rgba(var(--ion-color-secondary-rgb), 0.38);
+  --ion-color-step-650: rgba(var(--ion-color-secondary-rgb), 0.54);
+  --ion-font-family: Roboto;
+  --title-color: var(--ion-color-primary);
+  text-transform: capitalize;
+  span[slot="title"] {
+    color: rgba(var(--ion-color-secondary-rgb), 0.6);
+  }
+
+  &::part(month-year-button) {
+    --color: rgba(var(--ion-color-secondary-rgb), 0.87);
+    --min-height: 32px;
+    --padding-start: 24px;
+    text-transform: capitalize;
+  }
+
+  &::part(calendar-day today) {
+    border-color: var(--ion-color-primary);
+    color: var(--ion-color-primary);
+  }
+
+  &::part(calendar-day active),
+  &::part(calendar-day active):focus {
+    background: var(--ion-color-primary);
+    border-color: var(--ion-color-primary);
+    color: var(--ion-color-light);
+  }
+
+  ion-buttons.md[slot="buttons"] {
+    ion-button[fill="solid"] {
+      --background: var(--ion-color-primary);
+      --color: var(--ion-color-primary-contrast);
+      &::part(native) {
+        gap: 8px;
+        justify-content: center;
+        letter-spacing: 0.4px;
+        line-height: 24px;
+        padding: 6px 8px;
+      }
+    }
+  }
+}

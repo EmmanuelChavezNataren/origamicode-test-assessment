@@ -1,8 +1,84 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>home</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-main-header [hasLogoTitle]="true"></app-main-header>
 
 <ion-content>
+  <div class="main-bg">
+    <ion-list form-custom class="bg-transparent quotes" [formGroup]="quoteForm">
+      <ion-item id="openDateInput" input custom button="true" mode="md" lines="none">
+        <ion-label position="stacked">Fecha*:</ion-label>
+        <div input-date>
+          <ion-note class="label">Selecciona la fecha</ion-note>
+          <ion-item lines="none" class="content">
+            <ion-text class="value" *ngIf="dateValue">
+              {{ dateValue | date: 'dd/MM/yyyy'}}
+            </ion-text>
+            <ion-icon slot="end" src="assets/icon/svg/calendar-today-filled.svg"></ion-icon>
+          </ion-item>
+        </div>
+        <ion-note slot="error">Fecha invalida</ion-note>
+        <ion-popover class="date-time-picker" trigger="openDateInput" showBackdrop="false" alignment="end"
+          [keepContentsMounted]="true">
+          <ng-template>
+            <app-date-time-picker [value]="dateValue" [dateFormat]="format" (datePickerValue)="onChange($event)">
+            </app-date-time-picker>
+          </ng-template>
+        </ion-popover>
+      </ion-item>
+
+      <ion-item input custom lines="none" mode="md">
+        <ion-label position="stacked">Teléfono*:</ion-label>
+        <ion-input formControlName="phone" placeholder="0123456789" required type="tel" inputmode="numeric"
+          maxlength="10" shape="round" errorText="Télefono invalido" fill="outline" mode="md" class="custom"
+          enterkeyhint="next">
+        </ion-input>
+      </ion-item>
+
+      <ion-item input custom lines="none" mode="md">
+        <ion-label position="stacked">Email*:</ion-label>
+        <ion-input formControlName="email" placeholder="hola@mail.com" required type="email" inputmode="email"
+          shape="round" errorText="Email invalido" fill="outline" mode="md" class="custom" enterkeyhint="send">
+        </ion-input>
+      </ion-item>
+
+      <ion-button color="secondary" (click)="sendData()" shape="round" expand="block" [disabled]="quoteForm.invalid"
+        class="align-self-flex-end mt-24">
+        Enviar datos
+      </ion-button>
+    </ion-list>
+  </div>
+  <ng-container>
+    <ion-grid class="container">
+      <ion-row>
+        <ion-col size="12">
+          <ion-segment mode="md" [value]="sectionSelected" (ionChange)="segmentChanged($event)">
+            <ion-segment-button mode="md" *ngFor="let section of sectionList" [value]="section.value"
+              [disabled]="!section.isActive">
+              <ion-label>{{ section.name }}</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+        </ion-col>
+      </ion-row>
+      <ion-row [ngSwitch]="sectionSelected" class="datatable-container">
+        <ion-col size="12" *ngSwitchCase="'all'">
+          <ion-list custom-list>
+            <ion-list-header>
+              Todas Mis Citas
+            </ion-list-header>
+            <app-data-table [data]="appointmentData" [columns]="columns" [sorts]="sortsById"></app-data-table>
+          </ion-list>
+        </ion-col>
+        <ion-col size="12" *ngSwitchCase="'top5'">
+          <ion-list custom-list>
+            <ion-list-header>
+              Próximas 5 Citas
+            </ion-list-header>
+            <app-data-table [data]="appointmentData" [columns]="columns" [sorts]="sortsByDate"
+              [limit]="5"></app-data-table>
+          </ion-list>
+        </ion-col>
+        <ion-col size="12" *ngSwitchCase="'empty'">
+          <!--TODO Make when Section 3 has a proposal of prototype-->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ng-container>
 </ion-content>

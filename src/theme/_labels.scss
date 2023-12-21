@@ -1,0 +1,22 @@
+$font-size-title: 24px;
+$line-height-title: 24px;
+
+.text {
+  &-title {
+    &-brand {
+      font-size: $font-size-title;
+      line-height: $line-height-title;
+      padding: 18px;
+      .primary {
+        color: var(--ion-color-primary);
+        font-family: "Fascinate";
+        font-weight: 900;
+      }
+      .secondary {
+        color: rgba(var(--ion-color-secondary-rgb), 50%);
+        font-family: "Avenir";
+        font-weight: 400;
+      }
+    }
+  }
+}
