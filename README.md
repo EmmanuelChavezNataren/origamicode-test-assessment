@@ -49,14 +49,21 @@ These are some project dependencies and their versions to consider.
 
 ```
 .
+ ├── .github
+ │   ├── workflows
+ │   └── ...
  ├── src
  ├── .browserslistrc
  ├── .editorconfig
+ ├── .eslintrc.json
+ ├── .firebaserc
  ├── .gitignore
  ├── angular.json
  ├── capacitor.config.ts
+ ├── firebase.json
  ├── .ionic.config.json
  ├── karma.conf.js
+ ├── ngsw-config.json
  ├── package-lock.json
  ├── package.json
  ├── readme.md
