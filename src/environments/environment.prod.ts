@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  useLocalStorage: false,
-  apiUrl: ''
+  useLocalStorage: true,
+  apiUrl: 'https://origami-code-test-assessment.web.app'
 };
