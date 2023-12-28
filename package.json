@@ -12,6 +12,7 @@
     "lint": "ng lint",
     "postinstall:legacy": "npm install --legacy-peer-deps",
     "sync": "ionic build --configuration=staging && npx cap sync",
+    "sync:prod": "ionic build --configuration=production && npx cap sync",
     "serve:staging": "ionic serve --configuration staging",
     "serve:prod": "ionic serve --configuration production",
     "debug:apk": "ionic capacitor run android --configuration staging -l --external",
